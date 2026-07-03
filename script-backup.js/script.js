@@ -1,6 +1,5 @@
 // ======================================
-// EVERMIST OS
-// Main App
+// EVERMIST OS v2
 // ======================================
 
 // ---------- Elements ----------
@@ -19,6 +18,8 @@ const productCount = document.getElementById("productCount");
 const ideaCount = document.getElementById("ideaCount");
 const taskCount = document.getElementById("taskCount");
 
+
+
 // ---------- Buttons ----------
 
 document.getElementById("addProduct").addEventListener("click", () => {
@@ -29,7 +30,9 @@ document.getElementById("addIdea").addEventListener("click", () => {
     addItem(ideaInput, ideaList);
 });
 
-document.getElementById("addTask").addEventListener("click", addTask);
+document.getElementById("addTask").addEventListener("click", () => {
+    addTask();
+});
 
 document.getElementById("addNote").addEventListener("click", () => {
     addItem(noteInput, noteList);
@@ -41,12 +44,15 @@ document.getElementById("addNote").addEventListener("click", () => {
 
     input.addEventListener("keydown", (event) => {
 
-        if (event.key !== "Enter") return;
+        if(event.key !== "Enter") return;
 
-        if (input === productInput) addItem(productInput, productList);
-        if (input === ideaInput) addItem(ideaInput, ideaList);
-        if (input === noteInput) addItem(noteInput, noteList);
-        if (input === taskInput) addTask();
+        if(input === productInput) addItem(productInput, productList);
+
+        if(input === ideaInput) addItem(ideaInput, ideaList);
+
+        if(input === noteInput) addItem(noteInput, noteList);
+
+        if(input === taskInput) addTask();
 
     });
 
@@ -54,29 +60,34 @@ document.getElementById("addNote").addEventListener("click", () => {
 
 // ---------- Generic Lists ----------
 
-function addItem(input, list) {
+function addItem(input, list){
 
     const text = input.value.trim();
 
-    if (!text) return;
+    if(text === "") return;
 
     const li = document.createElement("li");
 
     const span = document.createElement("span");
+
     span.textContent = text;
 
     const button = document.createElement("button");
+
     button.textContent = "🗑️";
+
     button.className = "delete-btn";
 
     button.addEventListener("click", () => {
 
         li.remove();
+
         updateCounts();
 
     });
 
     li.appendChild(span);
+
     li.appendChild(button);
 
     list.appendChild(li);
@@ -89,16 +100,18 @@ function addItem(input, list) {
 
 // ---------- Tasks ----------
 
-function addTask() {
+function addTask(){
 
     const text = taskInput.value.trim();
 
-    if (!text) return;
+    if(text === "") return;
 
     const li = document.createElement("li");
 
     const span = document.createElement("span");
+
     span.textContent = text;
+
     span.style.cursor = "pointer";
 
     span.addEventListener("click", () => {
@@ -108,17 +121,21 @@ function addTask() {
     });
 
     const button = document.createElement("button");
+
     button.textContent = "🗑️";
+
     button.className = "delete-btn";
 
     button.addEventListener("click", () => {
 
         li.remove();
+
         updateCounts();
 
     });
 
     li.appendChild(span);
+
     li.appendChild(button);
 
     taskList.appendChild(li);
@@ -131,14 +148,16 @@ function addTask() {
 
 // ---------- Dashboard ----------
 
-function updateCounts() {
+function updateCounts(){
 
     productCount.textContent = productList.children.length;
+
     ideaCount.textContent = ideaList.children.length;
+
     taskCount.textContent = taskList.children.length;
 
 }
 
 updateCounts();
 
-console.log("🌿 Evermist OS Loaded");
+console.log("🌿 Evermist OS v2 Loaded");
