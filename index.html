@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Evermist OS</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="app">
+
+    <header>
+
+        <div>
+
+            <h1>🌿 Evermist OS</h1>
+
+            <p>Your Business Control Center</p>
+
+        </div>
+
+        <button id="themeButton">
+            🌙 Dark Mode
+        </button>
+
+    </header>
+
+    <section class="stats">
+
+        <div class="stat-card">
+
+            <h3>💰 Revenue</h3>
+
+            <span id="revenue">$5.00</span>
+
+        </div>
+
+        <div class="stat-card">
+
+            <h3>📦 Products</h3>
+
+            <span id="productCount">0</span>
+
+        </div>
+
+        <div class="stat-card">
+
+            <h3>💡 Ideas</h3>
+
+            <span id="ideaCount">0</span>
+
+        </div>
+
+        <div class="stat-card">
+
+            <h3>✅ Tasks</h3>
+
+            <span id="taskCount">0</span>
+
+        </div>
+
+    </section>
+
+    <section class="panel">
+
+        <h2>📦 Product Manager</h2>
+
+        <div class="input-group">
+
+            <input
+                id="productInput"
+                type="text"
+                placeholder="Add a product...">
+
+            <button id="addProduct">
+                Add
+            </button>
+
+        </div>
+
+        <ul id="productList"></ul>
+
+    </section>
+
+    <section class="panel">
+
+        <h2>💡 Idea Vault</h2>
+
+        <div class="input-group">
+
+            <input
+                id="ideaInput"
+                type="text"
+                placeholder="New product idea...">
+
+            <button id="addIdea">
+                Add
+            </button>
+
+        </div>
+
+        <ul id="ideaList"></ul>
+
+    </section>
+
+    <section class="panel">
+
+        <h2>✅ Today's Tasks</h2>
+
+        <div class="input-group">
+
+            <input
+                id="taskInput"
+                type="text"
+                placeholder="Today's task...">
+
+            <button id="addTask">
+                Add
+            </button>
+
+        </div>
+
+        <ul id="taskList"></ul>
+
+    </section>
+
+    <section class="panel">
+
+        <h2>📝 Quick Notes</h2>
+
+        <div class="input-group">
+
+            <input
+                id="noteInput"
+                type="text"
+                placeholder="Write a note...">
+
+            <button id="addNote">
+                Save
+            </button>
+
+        </div>
+
+        <ul id="noteList"></ul>
+
+    </section>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
